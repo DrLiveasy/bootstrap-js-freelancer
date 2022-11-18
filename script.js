@@ -12,9 +12,35 @@ Mostrare il risultato del calcolo del prezzo finale in una “forma umana” in 
 //variabile per prendere il bottone 
 let buttoneSend = document.getElementById("bottone");
 
+let ore = document.getElementById("hours");
+let Verificare = document.getElementById("verifica")
 //dare una functione al bottone quando clicca sopra
+
 buttoneSend.addEventListener('click', function (){
 
-    
+
 
 });
+
+
+
+
+
+//----FUNZIONI----
+
+//vfunzione per verificare chel'ora inserita è un numero
+
+
+function calcolreOre(ora){
+    
+    if (isNaN(ora)){
+        Verificare.innerHTML = 
+        `
+        <p>Perfavore inserisci un numero!</p>
+        `
+    }else if(ora){
+    }
+    
+
+
+}
