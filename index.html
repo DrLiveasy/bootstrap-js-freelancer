@@ -116,15 +116,15 @@
                     </div>
                     <div class="col-md-6">
                         <label for="hours" class="form-label">Hour's Request</label>
-                        <input type="text" class="form-control" id="hours">
+                        <input class="form-control" id="hours">
                     </div>
                     <div class="col-md-6">
                         <label for="typework" class="form-label">Type of Work</label>
                         <select id="typework" class="form-select">
                             <option selected="">Choose...</option>
-                            <option>Backend Develpment</option>
-                            <option>Fronend Develpment</option>
-                            <option>Analisi Progettuale</option>
+                            <option value="1">Backend Develpment</option>
+                            <option value="2">Fronend Develpment</option>
+                            <option value="3">Analisi Progettuale</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -142,10 +142,8 @@
                     <div class="text-center">
                         <button type="button" id = "bottone" class="btn btn-warning">Send</button>
                     </div>
-                    <div id="verifica">
-                    </div>
                 </form>
-                <h4>il prezzo finale è di:</h4>
+                <h4>il prezzo finale è di : <span id = "stampa"></span> </h4>
                 <br>
             </div>
         </div>

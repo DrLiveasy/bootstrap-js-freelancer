@@ -8,17 +8,20 @@ Se poi l’utente inserisce un codice promozionale tra i seguenti YHDNU32, JANJC
 Se il codice inserito non è valido, informate l’utente che il codice è sbagliato e calcolate il prezzo finale senza applicare sconti.
 Mostrare il risultato del calcolo del prezzo finale in una “forma umana” in un apposito tag HTML appena sotto il bottone send.*/
 
+//array codici 
 
 //variabile per prendere il bottone 
 let buttoneSend = document.getElementById("bottone");
 
-let ore = document.getElementById("hours");
-let Verificare = document.getElementById("verifica")
+let oreInseriti = parseInt(document.getElementById("hours"));
+let print = document.getElementById("stampa");
 //dare una functione al bottone quando clicca sopra
+//
 
-buttoneSend.addEventListener('click', function (){
 
 
+buttoneSend.addEventListener('click', function () {
+    Prezzo(oreInseriti);
 
 });
 
@@ -30,17 +33,25 @@ buttoneSend.addEventListener('click', function (){
 
 //vfunzione per verificare chel'ora inserita è un numero
 
-
-function calcolreOre(ora){
-    
-    if (isNaN(ora)){
-        Verificare.innerHTML = 
-        `
-        <p>Perfavore inserisci un numero!</p>
-        `
-    }else if(ora){
+function Prezzo(ora) {
+    let slect = document.getElementById("typework");
+    let value = slect.value;
+    let somma = 0;
+    if (value == "1") {
+        somma = 20.50 * ora;
+        print.innerHTML = `
+        ${somma} <span>€</span>
+    `
     }
-    
-
-
+    else if (value == "2"){
+        somma = 15.30 * ora;
+        print.innerHTML = `
+        ${somma} <span>€</span>
+        `
+    }else if (value == "3"){
+        somma = 33.60 * ora;
+        print.innerHTML = `
+        ${somma} <span>€</span>
+        `
+    }
 }
