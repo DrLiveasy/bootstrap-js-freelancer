@@ -39,6 +39,8 @@ let oreInseriti = document.getElementById("hours");
 
 let oreVal = oreInseriti.value;
 
+let or = parseInt(oreVal);
+
 let print = document.getElementById("stampa");
 //dare una functione al bottone quando clicca sopra
 //
@@ -46,7 +48,7 @@ let print = document.getElementById("stampa");
 
 
 buttoneSend.addEventListener('click', function () {
-    Prezzo(oreVal);
+    Prezzo(or);
 
 });
 
@@ -65,18 +67,18 @@ function Prezzo(ora) {
     if (value == "1") {
         somma = 20.50 * ora;
         print.innerHTML = `
-        ${ora} <span>€</span>
+        ${or} <span>€</span>
     `
     }
     else if (value == "2"){
         somma = 15.30 * ora;
         print.innerHTML = `
-        ${ora} <span>€</span>
+        ${or} <span>€</span>
         `
     }else if (value == "3"){
         somma = 33.60 * ora;
         print.innerHTML = `
-        ${ora} <span>€</span>
+        ${or} <span>€</span>
         `
     }
 }
