@@ -35,11 +35,6 @@ let codici = [
 //variabile per prendere il bottone 
 let buttoneSend = document.getElementById("bottone");
 
-let oreInseriti = document.getElementById("hours");
-
-let oreVal = oreInseriti.value;
-
-let or = parseInt(oreVal);
 
 let print = document.getElementById("stampa");
 //dare una functione al bottone quando clicca sopra
@@ -47,11 +42,11 @@ let print = document.getElementById("stampa");
 
 
 
-buttoneSend.addEventListener('click', function () {
+buttoneSend.addEventListener("click", function () {
+    let or = parseInt(document.getElementById("hours").value);
     Prezzo(or);
 
 });
-
 
 
 
@@ -61,24 +56,23 @@ buttoneSend.addEventListener('click', function () {
 //vfunzione per verificare chel'ora inserita è un numero
 
 function Prezzo(ora) {
-    let slect = document.getElementById("typework");
-    let value = slect.value;
-    let somma = 0;
-    if (value == "1") {
-        somma = 20.50 * ora;
-        print.innerHTML = `
-        ${or} <span>€</span>
-    `
-    }
-    else if (value == "2"){
-        somma = 15.30 * ora;
-        print.innerHTML = `
-        ${or} <span>€</span>
-        `
-    }else if (value == "3"){
-        somma = 33.60 * ora;
-        print.innerHTML = `
-        ${or} <span>€</span>
-        `
-    }
+let slect = document.getElementById("typework");
+let value = slect.value;
+let somma = 0;
+if (value == "1") {
+    somma = 20.5 * ora;
+    print.innerHTML = `
+        ${somma} <span>€</span>
+    `;
+} else if (value == "2") {
+    somma = 15.3 * ora;
+    print.innerHTML = `
+        ${somma} <span>€</span>
+        `;
+} else if (value == "3") {
+    somma = 33.6 * ora;
+    print.innerHTML = `
+        ${somma} <span>€</span>
+        `;
+}
 }
