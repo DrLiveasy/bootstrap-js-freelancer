@@ -54,7 +54,8 @@ function Prezzo(ora) {
             print.innerHTML = `
             ${somma.toFixed(2)} <span>€</span>
             `;
-            infomra.innerHTML  =  "il codice inserito non è valido";
+            infomra.innerHTML = "il codice inserito non è valido";
+            discountRosso();
         }
     } else if (value == "2") {
         if (promo()) {
@@ -68,7 +69,8 @@ function Prezzo(ora) {
             ${somma.toFixed(2)} <span>€</span>
             
             `;
-            infomra.innerHTML  =  "il codice inserito non è valido";
+            infomra.innerHTML = "il codice inserito non è valido";
+            discountRosso();
         }
     } else if (value == "3") {
         if (promo()) {
@@ -81,7 +83,8 @@ function Prezzo(ora) {
             print.innerHTML = `
             ${somma.toFixed(2)} <span>€</span>
             `;
-            infomra.innerHTML  =  "il codice inserito non è valido";
+            infomra.innerHTML = "il codice inserito non è valido";
+            discountRosso();
         }
     }
 }
@@ -93,5 +96,8 @@ function promo() {
     } else {
         return false;
     }
-
+//cambiare il colore del codice inserito in caso non è valido 
+}
+function discountRosso() {
+    document.getElementById("Discount").style.color = "#ff0000";
 }
