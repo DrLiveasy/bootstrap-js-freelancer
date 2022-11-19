@@ -21,7 +21,7 @@ let buttoneSend = document.getElementById("bottone");
 let print = document.getElementById("stampa");
 //dare una functione al bottone quando clicca sopra
 //
-
+let infomra = document.getElementById("informazione");
 
 
 
@@ -47,37 +47,41 @@ function Prezzo(ora) {
         if (promo()) {
             somma = 20.5 * ora - sconto25;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
             `;
         } else {
             somma = 20.5 * ora;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
             `;
+            infomra.innerHTML  =  "il codice inserito non è valido";
         }
     } else if (value == "2") {
         if (promo()) {
             somma = 15.30 * ora - sconto25;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
             `;
         } else {
             somma = 15.30 * ora;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
+            
             `;
+            infomra.innerHTML  =  "il codice inserito non è valido";
         }
     } else if (value == "3") {
         if (promo()) {
             somma = 33.60 * ora - sconto25;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
             `;
         } else {
             somma = 33.60 * ora;
             print.innerHTML = `
-            ${somma} <span>€</span>
+            ${somma.toFixed(2)} <span>€</span>
             `;
+            infomra.innerHTML  =  "il codice inserito non è valido";
         }
     }
 }
