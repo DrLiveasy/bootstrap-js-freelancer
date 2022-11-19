@@ -10,27 +10,9 @@ Mostrare il risultato del calcolo del prezzo finale in una “forma umana” in 
 
 //array codici discount
 
-let discount = document.getElementById("Discount");
-let discountVal = discount.value;
+let codici = ["YHDNU32","JANJC63","PWKCN25","SJDPO96", "POCIE24"]
 
-let codici = [
-    {
-        codice1: "YHDNU32"
-    },
-    {
-        codice1: "JANJC63"
-    },
-    {
-        codice1: "PWKCN25"
-    },
-    {
-        codice1: "SJDPO96"
-    },
-    {
-        codice1: "POCIE24"
-    },
-]
-    
+
 
 //variabile per prendere il bottone 
 let buttoneSend = document.getElementById("bottone");
@@ -39,6 +21,7 @@ let buttoneSend = document.getElementById("bottone");
 let print = document.getElementById("stampa");
 //dare una functione al bottone quando clicca sopra
 //
+
 
 
 
@@ -75,4 +58,14 @@ if (value == "1") {
         ${somma} <span>€</span>
         `;
 }
+}
+//verificare se il codice è nella lista dei codici
+function promo(){
+    let discount = document.getElementById("Discount").value;
+    if (codici.indexOf(discount) > -1) {
+        return true;
+    }else{
+        return false;
+    }
+    
 }
