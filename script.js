@@ -42,12 +42,16 @@ function Prezzo(ora) {
     let slect = document.getElementById("typework");
     let value = slect.value;
     let somma = 0;
-    let sconto25 = 25 / 100;
+    let valoreSconto = 0
+    let sommafinale = 0;
+    let sconto25 = 25/100;
     if (value == "1") {
         if (promo()) {
-            somma = 20.5 * ora - sconto25;
+            somma = 20.5 * ora;
+            valoreSconto = sconto25 * somma;
+            sommafinale = (somma - valoreSconto);
             print.innerHTML = `
-            ${somma.toFixed(2)} <span>€</span>
+            ${sommafinale.toFixed(2)} <span>€</span>
             `;
             removeArrValue();
         } else {
@@ -60,9 +64,11 @@ function Prezzo(ora) {
         }
     } else if (value == "2") {
         if (promo()) {
-            somma = 15.30 * ora - sconto25;
+            somma = 15.30 * ora 
+            valoreSconto = sconto25 * somma;
+            sommafinale = (somma - valoreSconto);
             print.innerHTML = `
-            ${somma.toFixed(2)} <span>€</span>
+            ${sommafinale.toFixed(2)} <span>€</span>
             `;
             removeArrValue();
         } else {
@@ -76,9 +82,11 @@ function Prezzo(ora) {
         }
     } else if (value == "3") {
         if (promo()) {
-            somma = 33.60 * ora - sconto25;
+            somma = 33.60 * ora 
+            valoreSconto = sconto25 * somma;
+            sommafinale = (somma - valoreSconto);
             print.innerHTML = `
-            ${somma.toFixed(2)} <span>€</span>
+            ${sommafinale.toFixed(2)} <span>€</span>
             `;
             removeArrValue();
         } else {
