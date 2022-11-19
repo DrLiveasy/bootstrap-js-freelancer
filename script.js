@@ -49,6 +49,7 @@ function Prezzo(ora) {
             print.innerHTML = `
             ${somma.toFixed(2)} <span>€</span>
             `;
+            removeArrValue();
         } else {
             somma = 20.5 * ora;
             print.innerHTML = `
@@ -63,6 +64,7 @@ function Prezzo(ora) {
             print.innerHTML = `
             ${somma.toFixed(2)} <span>€</span>
             `;
+            removeArrValue();
         } else {
             somma = 15.30 * ora;
             print.innerHTML = `
@@ -78,6 +80,7 @@ function Prezzo(ora) {
             print.innerHTML = `
             ${somma.toFixed(2)} <span>€</span>
             `;
+            removeArrValue();
         } else {
             somma = 33.60 * ora;
             print.innerHTML = `
@@ -100,4 +103,13 @@ function promo() {
 }
 function discountRosso() {
     document.getElementById("Discount").style.color = "#ff0000";
+}
+//rimuovere codice utilizzato
+function removeArrValue() {
+    let discount = document.getElementById("Discount").value;
+    let code = codici.indexOf(discount);
+    if (code > -1) {
+        codici.splice(code, 1);
+    }
+    return codici;
 }
