@@ -10,7 +10,7 @@ Mostrare il risultato del calcolo del prezzo finale in una “forma umana” in 
 
 //array codici discount
 
-let codici = ["YHDNU32","JANJC63","PWKCN25","SJDPO96", "POCIE24"]
+let codici = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
 
 
 
@@ -39,33 +39,55 @@ buttoneSend.addEventListener("click", function () {
 //vfunzione per verificare chel'ora inserita è un numero
 
 function Prezzo(ora) {
-let slect = document.getElementById("typework");
-let value = slect.value;
-let somma = 0;
-if (value == "1") {
-    somma = 20.5 * ora;
-    print.innerHTML = `
-        ${somma} <span>€</span>
-    `;
-} else if (value == "2") {
-    somma = 15.3 * ora;
-    print.innerHTML = `
-        ${somma} <span>€</span>
-        `;
-} else if (value == "3") {
-    somma = 33.6 * ora;
-    print.innerHTML = `
-        ${somma} <span>€</span>
-        `;
-}
+    let slect = document.getElementById("typework");
+    let value = slect.value;
+    let somma = 0;
+    let sconto25 = 25 / 100;
+    if (value == "1") {
+        if (promo()) {
+            somma = 20.5 * ora - sconto25;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        } else {
+            somma = 20.5 * ora;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        }
+    } else if (value == "2") {
+        if (promo()) {
+            somma = 15.30 * ora - sconto25;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        } else {
+            somma = 15.30 * ora;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        }
+    } else if (value == "3") {
+        if (promo()) {
+            somma = 33.60 * ora - sconto25;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        } else {
+            somma = 33.60 * ora;
+            print.innerHTML = `
+            ${somma} <span>€</span>
+            `;
+        }
+    }
 }
 //verificare se il codice è nella lista dei codici
-function promo(){
+function promo() {
     let discount = document.getElementById("Discount").value;
     if (codici.indexOf(discount) > -1) {
         return true;
-    }else{
+    } else {
         return false;
     }
-    
+
 }
